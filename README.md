@@ -12,10 +12,11 @@ This script matches JSON files to associated image files (jpg, jpeg, and png) do
 
 ## Usage
 
-1. Generate a CSV file using ExifTool with the following command (replace directory with your directory): `exiftool -common -r -csv "/mnt/e/takeout-20230312T190809Z-001/Takeout/Google Photos/" > out.csv` 
-2. Run the script: `python json_matcher.py`
-3. Run the script: `python metadata_loader.py`
-4. Run the command: `find /mnt/e/takeout-20230312T190809Z-001/Takeout/Google\ Photos/ -type f \( -iname '*.jpg' -o -iname '*.jpeg' -o -iname '*.png' \) -print0 | xargs -0 exiftool -csv=out_with_metadata.csv -overwrite_original -tagsfromfile @ -DateTimeOrigininal -csv-delimiter ,`
+1. Go to section Evaluate Results first, so you can get a "before" vs "after" comparison. 
+2. Generate a CSV file using ExifTool with the following command (replace directory with your directory): `exiftool -common -r -csv "/mnt/e/takeout-20230312T190809Z-001/Takeout/Google Photos/" > out.csv` 
+3. Run the script: `python json_matcher.py`
+4. Run the script: `python metadata_loader.py`
+5. Run the command: `find /mnt/e/takeout-20230312T190809Z-001/Takeout/Google\ Photos/ -type f \( -iname '*.jpg' -o -iname '*.jpeg' -o -iname '*.png' \) -print0 | xargs -0 exiftool -csv=out_with_metadata.csv -overwrite_original -tagsfromfile @ -DateTimeOrigininal -csv-delimiter ,`
 Note: You may receive a lot of warnings such as "Warning: No writeable tags set from ...". This is (probably) normal. I'm not an exiftool pro... There's probably a better way to do this, but this command worked for me. 
 
 The script will output a CSV file with the matched image and JSON files.
