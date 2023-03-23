@@ -94,3 +94,8 @@ df = df[(df["SourceFile"].str.lower().str.endswith((".jpg", ".jpeg", ".png"))) &
 
 # Save the updated DataFrame to a new CSV file
 df.to_csv("out_with_json.csv", index=False)
+
+# Evaluate and print results
+notna_rows = df["JsonFile"].notna().sum()
+na_rows = df["JsonFile"].isna().sum()
+print(f"Found matching JSON file for {notna_rows} photos.\nCould not find matching JSON file for {na_rows} photos.") 
