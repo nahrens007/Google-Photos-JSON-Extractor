@@ -20,6 +20,12 @@ Note: You may receive a lot of warnings such as "Warning: No writeable tags set 
 
 The script will output a CSV file with the matched image and JSON files.
 
+## Evaluate Results
+
+1. Generate a CSV file, once again: `exiftool -common -r -csv "/mnt/e/takeout-20230312T190809Z-001/Takeout/Google Photos/" > results.csv`
+2. Run the script: `python evaluate_results.py`
+3. Make changes to the scripts as necessary and repeat the steps. 
+
 # JSON file matching logic
 The script uses the following naming conventions to match a JSON file to an image file:
 
