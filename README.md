@@ -28,6 +28,7 @@ The script will output a CSV file with the matched image and JSON files.
 3. Make changes to the scripts as necessary and repeat the steps. 
 
 # JSON file matching logic
+###### Description generated using ChatGPT- may not be 100% accurate. 
 The script uses the following naming conventions to match a JSON file to an image file:
 
 If the image file name ends with parentheses and a number (e.g., "IMG_1667(1).jpg"), the corresponding JSON file name should be "IMG_1667.jpg(1).json". The number in parentheses should be removed from the image file name and included in the JSON file name, and the extension should be changed to ".json".
