@@ -17,6 +17,6 @@ import pandas as pd
 df = pd.read_csv("results.csv")
 
 # Evaluate df
-notna_rows = df["DateTimeOriginal"].notna().sum()
-na_rows = df["DateTimeOriginal"].isna().sum()
+notna_rows = len(df[df["DateTimeOriginal"].notna() & df["SourceFile"].str.lower().str.endswith((".jpg", ".jpeg", ".png"))])
+na_rows = len(df[df["DateTimeOriginal"].isna() & df["SourceFile"].str.lower().str.endswith((".jpg", ".jpeg", ".png"))])
 print(f"{notna_rows} photos have DateTimeOriginal.\n{na_rows} photos do not have DateTimeOriginal.") 
