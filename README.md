@@ -1,9 +1,7 @@
 # Google Photos JSON Matcher
-This repository contains a Python script that matches image files (jpg, jpeg, png) downloaded from Google Photos with their associated JSON files. The script uses a CSV file generated from ExifTool to find the matching JSON files. 
-
 ## Description
+This repository contains Python scripts that matches image files (jpg, jpeg, png) downloaded from Google Photos with their associated JSON files. The scripts uses a CSV file generated from ExifTool to find the matching JSON files.
 
-This script matches JSON files to associated image files (jpg, jpeg, and png) downloaded from Google Takeout extract of Google Photos.
 
 ## Installation
 
