@@ -44,3 +44,8 @@ def set_dt(row):
 df["DateTimeOriginal"] = df.apply(set_dt, axis=1)
 df.drop(columns=["JsonFile","FileName","FileSize","Model","Flash","ImageSize","FocalLength","ShutterSpeed","Aperture","ISO","WhiteBalance"], axis=1, inplace=True)
 df.to_csv("out_with_metadata.csv", index=False)
+
+# Evaluate and show results
+notna_rows = df["DateTimeOriginal"].notna().sum()
+na_rows = df["DateTimeOriginal"].isna().sum()
+print(f"Loaded DateTimeOriginal for {notna_rows} photos.\nCould not load DateTimeOriginal for {na_rows} photos.") 
