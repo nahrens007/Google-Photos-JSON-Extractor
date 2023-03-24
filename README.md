@@ -25,6 +25,9 @@ The script will output a CSV file with the matched image and JSON files.
 2. Run the script: `python evaluate_results.py`
 3. Make changes to the scripts as necessary and repeat the steps. 
 
+## Misc. Commands
+- Apply metadata from csv to files in single directory: `exiftool -csv=final_v3.csv -tagsfromfile @ -DateTimeOriginal -overwrite_original /mnt/e/takeout-20230312T190809Z-001/Takeout/Google\ Photos/Photos\ from\ 2022/`
+
 # JSON file matching logic
 ###### Description generated using ChatGPT- may not be 100% accurate. 
 The script uses the following naming conventions to match a JSON file to an image file:
